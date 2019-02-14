@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <!--구글의 위젯을 받고 웹사이트는 클라이언트 -->
+            <meta name="google-signin-scope" content="profile email https://www.googleapis.com/auth/calendar.readonly">
+            <meta name="google-signin-client_id" content="663913350605-grdlghbpubjr6h1al3kl4f439s4iggpm.apps.googleusercontent.com">
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+    </head>
+    <body>
+        <!--귀하가 클래스값을 가진 태그를 만들어주세요-->
+        <script>
+             function onSignIn(googleUser) {
+                alert('Login Success');
+                var profile = googleUser.getBasicProfile(); //가져온다 사용자의 베이직한 프로필을
+                alert("ID: " + profile.getName()); //고유한 식별자를 getid는 
+                console.log(googleUser.getAuthResponse().access_token);
+
+        //한시간 동안만 아주짧게 쓸수있는 토큰 
+        //구글이 직접 accesstoken을 만든것 
+        // console.log('Full Name: ' + profile.getName());
+        // console.log('Given Name: ' + profile.getGivenName());
+        // console.log('Family Name: ' + profile.getFamilyName());
+        // console.log("Image URL: " + profile.getImageUrl());
+        // console.log("Email: " + profile.getEmail());
+        // // The ID token you need to pass to your backend:
+         
+        // console.log("ID Token: " + id_token);
+      }
+        </script>
+            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">
+            </div>
+            
+    </body>
+</html>
